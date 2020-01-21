@@ -1,0 +1,50 @@
+{
+    "name": "remind/conflucence-changelog",
+    "description": "Publish git history to confluence",
+    "keywords": [
+        "REMIND",
+        "atlassian",
+        "confluence",
+        "git",
+        "changelog"
+    ],
+    "type": "project",
+    "license": "propietary",
+    "authors": [
+        {
+            "name": "REMIND GmbH",
+            "email": "technik@remind.de"
+        },
+        {
+            "name": "Hauke Schulz",
+            "email": "h.schulz@remind.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Remind\\ConfluenceChangelog\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Remind\\ConfluenceChangelog\\Tests\\": "Tests"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "apcu-autoloader": true
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.5.2",
+        "symfony/console": "^5.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5.2",
+        "theseer/phpdox": "^0.12.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "bin": [
+        "bin/conflog"
+    ]
+}

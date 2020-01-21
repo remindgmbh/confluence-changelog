@@ -1,0 +1,12 @@
+### IDE ###
+nbproject
+.vscode
+.idea
+
+### Composer ###
+composer.phar
+vendor
+
+### General ###
+*.log
+cache.properties
