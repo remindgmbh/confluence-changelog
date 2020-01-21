@@ -1,5 +1,5 @@
 {
-    "name": "remind/conflucence-changelog",
+    "name": "remind/confluence-changelog",
     "description": "Publish git history to confluence",
     "keywords": [
         "REMIND",
