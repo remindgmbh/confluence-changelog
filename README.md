@@ -3,7 +3,7 @@
 Erzeugt Confluence-Seiten mit JIRA-Tickets für das aktuelle Projekt.
 
 ![remind-badge](https://img.shields.io/badge/author-REMIND-black.svg?style=flat-square)
-![php74-badge](https://img.shields.io/badge/PHP-7.4-green.svg?style=flat-square)
+![php74-badge](https://img.shields.io/badge/PHP-7.2-yellow.svg?style=flat-square)
 ![version-badge](https://img.shields.io/badge/version-0.1.0-lightgrey.svg?style=flat-square)
 
 --------------------------------------------------------------------------------

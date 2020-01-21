@@ -38,14 +38,14 @@ class GitLog
      *
      * @var array
      */
-    protected array $tags = [];
+    protected $tags = [];
 
     /**
      * Holds the previously processed tag name.
      *
      * @var string
      */
-    protected string $lastTag = '';
+    protected $lastTag = '';
 
     /**
      * An associative array where the key is the tag name
@@ -54,7 +54,7 @@ class GitLog
      *
      * @var array
      */
-    protected array $data = [];
+    protected $data = [];
 
     /**
      * Initializes the tag data by executing the git tag command.

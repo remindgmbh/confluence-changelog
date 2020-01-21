@@ -19,17 +19,35 @@ class Content implements JsonSerializable
 
     const STATUS_DRAFT = 'draft';
 
-    protected string $type = self::TYPE_PAGE;
+    /**
+     * @var string
+     */
+    protected $type = self::TYPE_PAGE;
 
-    protected string $spaceKey = 'TEC';
+    /**
+     * @var string
+     */
+    protected $spaceKey = 'TEC';
 
-    protected string $title = 'Test';
+    /**
+     * @var string
+     */
+    protected $title = 'Test';
 
-    protected string $status = self::STATUS_CURRENT;
+    /**
+     * @var string
+     */
+    protected $status = self::STATUS_CURRENT;
 
-    protected string $ancestor = '1266188289';
+    /**
+     * @var string
+     */
+    protected $ancestor = '1266188289';
 
-    protected ?Body $body = null;
+    /**
+     * @var Body|null
+     */
+    protected $body = null;
 
     public function __construct()
     {

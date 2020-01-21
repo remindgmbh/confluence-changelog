@@ -7,15 +7,30 @@ use \Remind\ConfluenceChangelog\Model\Content\ContentBody;
 
 class Body implements JsonSerializable
 {
-    protected ?ContentBody $view = null;
+    /**
+     * @var ContentBody|null
+     */
+    protected $view = null;
 
-    protected ?ContentBody $exportView = null;
+    /**
+     * @var ContentBody|null
+     */
+    protected $exportView = null;
 
-    protected ?ContentBody $styledView = null;
+    /**
+     * @var ContentBody|null
+     */
+    protected $styledView = null;
 
-    protected ?ContentBody $storage = null;
+    /**
+     * @var ContentBody|null
+     */
+    protected $storage = null;
 
-    protected ?ContentBody $editor2 = null;
+    /**
+     * @var ContentBody|null
+     */
+    protected $editor2 = null;
 
     public function __construct()
     {

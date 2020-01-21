@@ -25,32 +25,32 @@ class ConfluenceClient
     /**
      * @var string
      */
-    protected string $token = '';
+    protected $token = '';
 
     /**
      * @var string
      */
-    protected string $spaceKey = '';
+    protected $spaceKey = '';
 
     /**
      * @var string
      */
-    protected string $ancestorName = self::ANCESTOR_DEFAULT;
+    protected $ancestorName = self::ANCESTOR_DEFAULT;
 
     /**
      * @var string
      */
-    protected string $ancestorId = '';
+    protected $ancestorId = '';
 
     /**
      * @var Client|null
      */
-    protected ?Client $client = null;
+    protected $client = null;
 
     /**
      * @var OutputInterface|null
      */
-    protected ?OutputInterface $output = null;
+    protected $output = null;
 
     /**
      * @param string $token

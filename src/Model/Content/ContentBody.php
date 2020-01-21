@@ -18,22 +18,25 @@ class ContentBody implements JsonSerializable
 
     const REP_ANON_EXPORT_VIEW = 'anonymous_export_view';
 
-    protected string $value = '';
+    /**
+     * @var string
+     */
+    protected $value = '';
 
-    // Valid values: view, export_view, styled_view, storage, editor2, anonymous_export_view
-    protected string $representation = '';
+    /**
+     * Valid values: view, export_view, styled_view, storage, editor2, anonymous_export_view
+     *
+     * @var string
+     */
+    protected $representation = '';
 
     /**
      * Array<EmbeddedContent>
      * Array of ints
+     *
+     * @var array
      */
     protected array $embeddedContent = [];
-
-    // WebResourceDependencies
-    protected $webresource = null;
-
-    // object
-    protected $_expandable = null;
 
     public function __construct(string $value)
     {
