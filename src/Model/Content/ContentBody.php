@@ -36,7 +36,7 @@ class ContentBody implements JsonSerializable
      *
      * @var array
      */
-    protected array $embeddedContent = [];
+    protected $embeddedContent = [];
 
     public function __construct(string $value)
     {
