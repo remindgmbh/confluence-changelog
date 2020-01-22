@@ -88,7 +88,7 @@ class ConfluenceClient
         }
 
         foreach ($data as $tag => $content) {
-            $this->updateTagPage($tag, $content);
+            $this->createTagPage($tag, $content);
         }
 
         return 0;
@@ -170,14 +170,14 @@ class ConfluenceClient
 
     /**
      * @param string $tag
-     * @param string $content
+     * @param string $data
      * @return void
      */
-    protected function updateTagPage(string $tag, string $content): void
+    protected function createTagPage(string $tag, string $data): void
     {
         $request = $this->applyRequestParams(new Request('POST', 'content'));
 
-        $storageBody = new ContentBody('<h1>Änderungen</h1>' . $content);
+        $storageBody = new ContentBody('<h1>Änderungen</h1>' . $data);
 
         $body = new Body();
         $body->setStorage($storageBody);
@@ -192,6 +192,8 @@ class ConfluenceClient
             stream_for(json_encode($content, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE))
         );
 
+        $isAlreadyThere = false;
+
         try {
             $this->client->send($request);
         } catch (ClientException $e) {
@@ -200,15 +202,67 @@ class ConfluenceClient
                 $response = $e->getResponse();
 
                 if ($response !== null) {
-                    $data = json_decode($response->getBody(), true);
+                    $error = json_decode($response->getBody(), true);
 
-                    $message = $data['message'] ?? $response->getBody();
+                    $message = $error['message'] ?? $response->getBody();
 
                     if (stripos($message, 'A page with this title already exists') === false) {
 
                         if ($this->output !== null) {
                             $this->output->writeln($message);
                         }
+                    } else {
+                        $isAlreadyThere = true;
+                    }
+                }
+            }
+        }
+
+        if ($tag === 'develop' && $isAlreadyThere) {
+            $this->updateTagPage($tag, $data);
+        }
+    }
+
+    /**
+     * @param string $tga
+     * @param string $data
+     * @return void
+     */
+    protected function updateTagPage(string $tag, string $data): void
+    {
+        $request = $this->applyRequestParams(new Request('PUT', 'content'));
+
+        $storageBody = new ContentBody('<h1>Änderungen</h1>' . $data);
+
+        $body = new Body();
+        $body->setStorage($storageBody);
+
+        $content = new Content();
+        $content->setSpaceKey($this->spaceKey);
+        $content->setTitle($tag);
+        $content->setAncestor($this->ancestorId);
+        $content->setBody($body);
+
+        $request = $request->withBody(
+            stream_for(json_encode($content, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE))
+        );
+
+        $isAlreadyThere = false;
+
+        try {
+            $this->client->send($request);
+        } catch (ClientException $e) {
+            if ($this->output !== null) {
+
+                $response = $e->getResponse();
+
+                if ($response !== null) {
+                    $error = json_decode($response->getBody(), true);
+
+                    $message = $error['message'] ?? $response->getBody();
+
+                    if ($this->output !== null) {
+                        $this->output->writeln($message);
                     }
                 }
             }
