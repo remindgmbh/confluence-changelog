@@ -78,6 +78,12 @@ class GitLog
 
         /* Process each tag into a content representation */
         foreach ($this->tags as $tag) {
+
+            /* Sometimes the git command returns an empty entry */
+            if ($tag === '') {
+                continue;
+            }
+
             $this->intoContent($this->processTag($tag), $tag);
         }
 
