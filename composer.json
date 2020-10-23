@@ -35,6 +35,7 @@
         "apcu-autoloader": true
     },
     "require": {
+        "php": "^7.2.0",
         "guzzlehttp/guzzle": "^6.0.0",
         "symfony/console": "^5.0.0 | ^4.0.0"
     },
