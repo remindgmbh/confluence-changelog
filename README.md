@@ -26,6 +26,11 @@ Could be used during CI to collect and bundle the referenced issues.
 
 ### Run confluence changelog generator
 
+This will run the documentor and create a page for each tag name in a
+Confluence space with the id 'ABC' under the parent page titled 'Changelog'.
+Every issue id found after the latest tag will be put on a page titled
+'develop' under the same parent.
+
 ```shell
 ./vendor/bin/conflog document --spacekey ABC --token xyz --ancestor Changelog --uri https://myname.atlassian.net/wiki/rest/api/
 ```
