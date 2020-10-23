@@ -10,3 +10,6 @@ vendor
 ### General ###
 *.log
 cache.properties
+
+### Development ###
+coverage.xml

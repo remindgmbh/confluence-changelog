@@ -49,6 +49,6 @@
         "bin/conflog"
     ],
     "scripts": {
-        "test": "@php vendor/phpunit/phpunit/phpunit --bootstrap=./vendor/autoload.php --whitelist=./src/ --testdox ./Tests/"
+        "test": "@php vendor/phpunit/phpunit/phpunit --bootstrap=./vendor/autoload.php --whitelist=./src/ --testdox --coverage-clover=coverage.xml ./Tests/"
     }
 }
