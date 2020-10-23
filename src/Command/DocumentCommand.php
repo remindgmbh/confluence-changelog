@@ -76,16 +76,16 @@ class DocumentCommand extends Command
                     'The confluence space key'
                 ),
                 new InputOption(
+                    self::ARGUMENT_URI,
+                    null,
+                    InputOption::VALUE_REQUIRED,
+                    'The REST API endpoint'
+                ),
+                new InputOption(
                     self::ARGUMENT_ANCESTOR,
                     null,
                     InputOption::VALUE_OPTIONAL,
                     'The parent page title'
-                ),
-                new InputOption(
-                    self::ARGUMENT_URI,
-                    null,
-                    InputOption::VALUE_OPTIONAL,
-                    'The REST API endpoint'
                 )
             ])
         );
