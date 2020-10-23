@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Remind\ConfluenceChangelog\Model;
 
 use \JsonSerializable;

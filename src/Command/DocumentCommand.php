@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Remind\ConfluenceChangelog\Command;
 
 use \Remind\ConfluenceChangelog\ConfluenceClient;
@@ -18,7 +20,7 @@ class DocumentCommand extends Command
      * Define the name of the command.
      * @var string
      */
-    const COMMAND_NAME = 'conflog:document';
+    const COMMAND_NAME = 'document';
 
     /**
      * Define token parameter name.
@@ -83,8 +85,7 @@ class DocumentCommand extends Command
                     self::ARGUMENT_URI,
                     null,
                     InputOption::VALUE_OPTIONAL,
-                    'The REST API endpoint',
-                    'https://remind.atlassian.net/wiki/rest/api/'
+                    'The REST API endpoint'
                 )
             ])
         );

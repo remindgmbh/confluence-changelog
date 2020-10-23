@@ -9,7 +9,7 @@
         "changelog"
     ],
     "type": "project",
-    "license": "propietary",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "REMIND GmbH",
@@ -47,5 +47,8 @@
     "prefer-stable": true,
     "bin": [
         "bin/conflog"
-    ]
+    ],
+    "scripts": {
+        "test": "@php vendor/phpunit/phpunit/phpunit --bootstrap=./vendor/autoload.php --whitelist=./src/ --testdox ./Tests/"
+    }
 }
