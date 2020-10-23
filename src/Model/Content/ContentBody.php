@@ -4,21 +4,21 @@ declare(strict_types=1);
 
 namespace Remind\ConfluenceChangelog\Model\Content;
 
-use \JsonSerializable;
+use JsonSerializable;
 
 class ContentBody implements JsonSerializable
 {
-    const REP_VIEW = 'view';
+    public const REP_VIEW = 'view';
 
-    const REP_EXPORT_VIEW = 'export_view';
+    public const REP_EXPORT_VIEW = 'export_view';
 
-    const REP_STYLED_VIEW = 'styled_view';
+    public const REP_STYLED_VIEW = 'styled_view';
 
-    const REP_STORAGE = 'storage';
+    public const REP_STORAGE = 'storage';
 
-    const REP_EDITOR2 = 'editor2';
+    public const REP_EDITOR2 = 'editor2';
 
-    const REP_ANON_EXPORT_VIEW = 'anonymous_export_view';
+    public const REP_ANON_EXPORT_VIEW = 'anonymous_export_view';
 
     /**
      * @var string

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Remind\ConfluenceChangelog\Tests\Unit\Model;
 
+use PHPUnit\Framework\TestCase;
 use Remind\ConfluenceChangelog\Model\Content;
 use Remind\ConfluenceChangelog\Model\Content\Body;
-use PHPUnit\Framework\TestCase;
 
 /**
  * Description of ContentTest

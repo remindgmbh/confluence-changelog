@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Remind\ConfluenceChangelog\Command;
 
-use \Remind\ConfluenceChangelog\ConfluenceClient;
-use \Symfony\Component\Console\Command\Command;
-use \Symfony\Component\Console\Input\InputDefinition;
-use \Symfony\Component\Console\Input\InputInterface;
-use \Symfony\Component\Console\Input\InputOption;
-use \Symfony\Component\Console\Output\OutputInterface;
+use Remind\ConfluenceChangelog\ConfluenceClient;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputDefinition;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Description of DocumentCommand
@@ -20,35 +20,35 @@ class DocumentCommand extends Command
      * Define the name of the command.
      * @var string
      */
-    const COMMAND_NAME = 'document';
+    public const COMMAND_NAME = 'document';
 
     /**
      * Define token parameter name.
      *
      * @var string
      */
-    const ARGUMENT_TOKEN = 'token';
+    public const ARGUMENT_TOKEN = 'token';
 
     /**
      * Define space key parameter name.
      *
      * @var string
      */
-    const ARGUMENT_SPACE_KEY = 'spaceKey';
+    public const ARGUMENT_SPACE_KEY = 'spaceKey';
 
     /**
      * Define ancestor parameter name.
      *
      * @var string
      */
-    const ARGUMENT_ANCESTOR = 'ancestor';
+    public const ARGUMENT_ANCESTOR = 'ancestor';
 
     /**
      * Define uri parameter name.
      *
      * @var string
      */
-    const ARGUMENT_URI = 'uri';
+    public const ARGUMENT_URI = 'uri';
 
     /**
      * Configure the command.
