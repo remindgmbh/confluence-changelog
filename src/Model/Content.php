@@ -4,22 +4,22 @@ declare(strict_types=1);
 
 namespace Remind\ConfluenceChangelog\Model;
 
-use \JsonSerializable;
-use \Remind\ConfluenceChangelog\Model\Content\Body;
+use JsonSerializable;
+use Remind\ConfluenceChangelog\Model\Content\Body;
 
 class Content implements JsonSerializable
 {
-    const TYPE_PAGE = 'page';
+    public const TYPE_PAGE = 'page';
 
-    const TYPE_BLOG = 'blogpost';
+    public const TYPE_BLOG = 'blogpost';
 
-    const STATUS_CURRENT = 'current';
+    public const STATUS_CURRENT = 'current';
 
-    const STATUS_TRASHED = 'trashed';
+    public const STATUS_TRASHED = 'trashed';
 
-    const STATUS_HISTORICAL = 'historical';
+    public const STATUS_HISTORICAL = 'historical';
 
-    const STATUS_DRAFT = 'draft';
+    public const STATUS_DRAFT = 'draft';
 
     /**
      * @var string

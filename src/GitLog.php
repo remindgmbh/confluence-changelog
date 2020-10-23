@@ -10,25 +10,25 @@ class GitLog
      * Defines the command to list all available git tags.
      * @var string
      */
-    const CMD_GIT_TAGS = 'git for-each-ref --sort="*authordate" --format="%(tag)" refs/tags';
+    public const CMD_GIT_TAGS = 'git for-each-ref --sort="*authordate" --format="%(tag)" refs/tags';
 
     /**
      * Defines the base command to show all git commit messages.
      * @var string
      */
-    const CMD_GIT_LOG = 'git log --no-merges --pretty="%s" ';
+    public const CMD_GIT_LOG = 'git log --no-merges --pretty="%s" ';
 
     /**
      * Regex pattern to match JIRA issues.
      * @var string
      */
-    const PATTERN_ISSUE = '~([A-Z]{2,12})-([0-9]{1,5})~';
+    public const PATTERN_ISSUE = '~([A-Z]{2,12})-([0-9]{1,5})~';
 
     /**
      * The template used by sprintf to generate a jira issue macro.
      * @var string
      */
-    const TEMPLATE_LINK
+    public const TEMPLATE_LINK
         = '<p><ac:structured-macro ac:name="jira">'
         . '<ac:parameter ac:name="server">System Jira</ac:parameter>'
         . '<ac:parameter ac:name="serverId">55d1b5b8-fd75-38e3-9511-3fc116e05466</ac:parameter>'
@@ -130,7 +130,6 @@ class GitLog
         $data = [];
 
         foreach ($messages as $message) {
-
             $result = preg_match_all(self::PATTERN_ISSUE, $message, $matches);
 
             if ($result === 0 || $result === false) {
@@ -138,7 +137,6 @@ class GitLog
             }
 
             for ($i = 0, $c = count($matches[0]); $i < $c; ++$i) {
-
                 $project = $matches[1][$i] ?? '';
                 $id = $matches[2][$i] ?? '';
 
@@ -165,11 +163,9 @@ class GitLog
         ksort($data);
 
         foreach ($data as $project => $ids) {
-
             asort($ids);
 
             foreach ($ids as $id) {
-
                 $issue = $project . '-' . $id;
 
                 if (!isset($this->data[$tag])) {

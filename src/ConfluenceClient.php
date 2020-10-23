@@ -4,15 +4,14 @@ declare(strict_types=1);
 
 namespace Remind\ConfluenceChangelog;
 
-use \GuzzleHttp\Client;
-use \GuzzleHttp\Exception\ClientException;
-use \GuzzleHttp\Psr7\Request;
-use \Remind\ConfluenceChangelog\GitLog;
-use \Remind\ConfluenceChangelog\Model\Content;
-use \Remind\ConfluenceChangelog\Model\Content\Body;
-use \Remind\ConfluenceChangelog\Model\Content\ContentBody;
-use \Symfony\Component\Console\Output\OutputInterface;
-use function \GuzzleHttp\Psr7\stream_for;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Psr7\Request;
+use function GuzzleHttp\Psr7\stream_for;
+use Remind\ConfluenceChangelog\Model\Content;
+use Remind\ConfluenceChangelog\Model\Content\Body;
+use Remind\ConfluenceChangelog\Model\Content\ContentBody;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * ConfluenceClient
@@ -22,7 +21,7 @@ class ConfluenceClient
     /**
      * @var string
      */
-    const ANCESTOR_DEFAULT = 'Changelog';
+    public const ANCESTOR_DEFAULT = 'Changelog';
 
     /**
      * @var string
@@ -163,7 +162,6 @@ class ConfluenceClient
 
             $this->ancestorId = $data['id'] ?? '';
         } catch (ClientException $e) {
-
             if ($this->output !== null) {
                 $this->output->writeln('Could not fetch or create changelog page');
             }
@@ -200,7 +198,6 @@ class ConfluenceClient
             $this->client->send($request);
         } catch (ClientException $e) {
             if ($this->output !== null) {
-
                 $response = $e->getResponse();
 
                 if ($response !== null) {
@@ -209,7 +206,6 @@ class ConfluenceClient
                     $message = $error['message'] ?? $response->getBody();
 
                     if (stripos($message, 'A page with this title already exists') === false) {
-
                         if ($this->output !== null) {
                             $this->output->writeln($message);
                         }
@@ -255,7 +251,6 @@ class ConfluenceClient
             $this->client->send($request);
         } catch (ClientException $e) {
             if ($this->output !== null) {
-
                 $response = $e->getResponse();
 
                 if ($response !== null) {
