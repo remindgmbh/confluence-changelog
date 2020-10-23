@@ -76,16 +76,16 @@ class DocumentCommand extends Command
                     'The confluence space key'
                 ),
                 new InputOption(
+                    self::ARGUMENT_URI,
+                    null,
+                    InputOption::VALUE_REQUIRED,
+                    'The REST API endpoint'
+                ),
+                new InputOption(
                     self::ARGUMENT_ANCESTOR,
                     null,
                     InputOption::VALUE_OPTIONAL,
                     'The parent page title'
-                ),
-                new InputOption(
-                    self::ARGUMENT_URI,
-                    null,
-                    InputOption::VALUE_OPTIONAL,
-                    'The REST API endpoint'
                 )
             ])
         );
@@ -104,10 +104,10 @@ class DocumentCommand extends Command
         $token = $input->getOption(self::ARGUMENT_TOKEN) ?? '';
         $spaceKey = $input->getOption(self::ARGUMENT_SPACE_KEY) ?? '';
         $ancestor = $input->getOption(self::ARGUMENT_ANCESTOR) ?? '';
-        $uri = $input->getOption(self::ARGUMENT_URI) ?? 'https://remind.atlassian.net/wiki/rest/api/';
+        $uri = $input->getOption(self::ARGUMENT_URI) ?? '';
 
         /* Required arguments are empty */
-        if ($token === '' || $spaceKey === '') {
+        if ($token === '' || $spaceKey === '' || $uri === '') {
             return 1;
         }
 
