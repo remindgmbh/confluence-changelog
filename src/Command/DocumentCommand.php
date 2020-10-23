@@ -104,10 +104,10 @@ class DocumentCommand extends Command
         $token = $input->getOption(self::ARGUMENT_TOKEN) ?? '';
         $spaceKey = $input->getOption(self::ARGUMENT_SPACE_KEY) ?? '';
         $ancestor = $input->getOption(self::ARGUMENT_ANCESTOR) ?? '';
-        $uri = $input->getOption(self::ARGUMENT_URI) ?? 'https://remind.atlassian.net/wiki/rest/api/';
+        $uri = $input->getOption(self::ARGUMENT_URI) ?? '';
 
         /* Required arguments are empty */
-        if ($token === '' || $spaceKey === '') {
+        if ($token === '' || $spaceKey === '' || $uri === '') {
             return 1;
         }
 
