@@ -14,9 +14,10 @@ class GitLog
 
     /**
      * Defines the base command to show all git commit messages.
+     * Using %B: raw body (unwrapped subject and body)
      * @var string
      */
-    public const CMD_GIT_LOG = 'git log --no-merges --pretty="%s" ';
+    public const CMD_GIT_LOG = 'git log --no-merges --pretty="%B" ';
 
     /**
      * Regex pattern to match JIRA issues.
