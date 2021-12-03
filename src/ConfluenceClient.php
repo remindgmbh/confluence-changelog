@@ -7,12 +7,12 @@ namespace Remind\ConfluenceChangelog;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Request;
+use function GuzzleHttp\Psr7\stream_for;
 use Remind\ConfluenceChangelog\Model\Content;
 use Remind\ConfluenceChangelog\Model\Content\Body;
 use Remind\ConfluenceChangelog\Model\Content\ContentBody;
-use Symfony\Component\Console\Output\OutputInterface;
 
-use function GuzzleHttp\Psr7\stream_for;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * ConfluenceClient
