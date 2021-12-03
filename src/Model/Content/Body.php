@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Remind\ConfluenceChangelog\Model\Content;
 
 use JsonSerializable;
-use Remind\ConfluenceChangelog\Model\Content\ContentBody;
 
 /**
  *
