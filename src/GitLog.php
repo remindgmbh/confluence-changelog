@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Remind\ConfluenceChangelog;
 
+/**
+ *
+ */
 class GitLog
 {
     /**
@@ -41,14 +44,14 @@ class GitLog
      *
      * @var array
      */
-    protected $tags = [];
+    protected array $tags = [];
 
     /**
      * Holds the previously processed tag name.
      *
      * @var string
      */
-    protected $lastTag = '';
+    protected string $lastTag = '';
 
     /**
      * An associative array where the key is the tag name
@@ -57,7 +60,7 @@ class GitLog
      *
      * @var array
      */
-    protected $data = [];
+    protected array $data = [];
 
     /**
      * Initializes the tag data by executing the git tag command.
@@ -81,7 +84,6 @@ class GitLog
 
         /* Process each tag into a content representation */
         foreach ($this->tags as $tag) {
-
             /* Sometimes the git command returns an empty entry */
             if ($tag === '') {
                 continue;

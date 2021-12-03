@@ -108,7 +108,7 @@ class DocumentCommand extends Command
 
         /* Required arguments are empty */
         if ($token === '' || $spaceKey === '' || $uri === '') {
-            return 1;
+            return self::FAILURE;
         }
 
         /* Create a new client */

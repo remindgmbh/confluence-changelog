@@ -5,34 +5,46 @@ declare(strict_types=1);
 namespace Remind\ConfluenceChangelog\Model\Content;
 
 use JsonSerializable;
+use Remind\ConfluenceChangelog\Model\Content\ContentBody;
 
+/**
+ *
+ */
 class Body implements JsonSerializable
 {
     /**
+     *
      * @var ContentBody|null
      */
-    protected $view = null;
+    protected ?ContentBody $view = null;
 
     /**
+     *
      * @var ContentBody|null
      */
-    protected $exportView = null;
+    protected ?ContentBody $exportView = null;
 
     /**
+     *
      * @var ContentBody|null
      */
-    protected $styledView = null;
+    protected ?ContentBody $styledView = null;
 
     /**
+     *
      * @var ContentBody|null
      */
-    protected $storage = null;
+    protected ?ContentBody $storage = null;
 
     /**
+     *
      * @var ContentBody|null
      */
-    protected $editor2 = null;
+    protected ?ContentBody $editor2 = null;
 
+    /**
+     *
+     */
     public function __construct()
     {
         $this->view = null;
@@ -42,6 +54,10 @@ class Body implements JsonSerializable
         $this->editor2 = null;
     }
 
+    /**
+     *
+     * @return array
+     */
     public function jsonSerialize(): array
     {
         $temp = [];
@@ -69,11 +85,20 @@ class Body implements JsonSerializable
         return $temp;
     }
 
+    /**
+     *
+     * @return ContentBody|null
+     */
     public function getView(): ?ContentBody
     {
         return $this->view;
     }
 
+    /**
+     *
+     * @param ContentBody|null $view
+     * @return void
+     */
     public function setView(?ContentBody $view): void
     {
         if ($view !== null) {
@@ -83,11 +108,20 @@ class Body implements JsonSerializable
         $this->view = $view;
     }
 
+    /**
+     *
+     * @return ContentBody|null
+     */
     public function getExportView(): ?ContentBody
     {
         return $this->exportView;
     }
 
+    /**
+     *
+     * @param ContentBody|null $exportView
+     * @return void
+     */
     public function setExportView(?ContentBody $exportView): void
     {
         if ($exportView !== null) {
@@ -97,11 +131,20 @@ class Body implements JsonSerializable
         $this->exportView = $exportView;
     }
 
+    /**
+     *
+     * @return ContentBody|null
+     */
     public function getStyledView(): ?ContentBody
     {
         return $this->styledView;
     }
 
+    /**
+     *
+     * @param ContentBody|null $styledView
+     * @return void
+     */
     public function setStyledView(?ContentBody $styledView): void
     {
         if ($styledView !== null) {
@@ -111,11 +154,20 @@ class Body implements JsonSerializable
         $this->styledView = $styledView;
     }
 
+    /**
+     *
+     * @return ContentBody|null
+     */
     public function getStorage(): ?ContentBody
     {
         return $this->storage;
     }
 
+    /**
+     *
+     * @param ContentBody|null $storage
+     * @return void
+     */
     public function setStorage(?ContentBody $storage): void
     {
         if ($storage !== null) {
@@ -125,11 +177,20 @@ class Body implements JsonSerializable
         $this->storage = $storage;
     }
 
+    /**
+     *
+     * @return ContentBody|null
+     */
     public function getEditor2(): ?ContentBody
     {
         return $this->editor2;
     }
 
+    /**
+     *
+     * @param ContentBody|null $editor2
+     * @return void
+     */
     public function setEditor2(?ContentBody $editor2): void
     {
         if ($editor2 !== null) {

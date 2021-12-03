@@ -7,11 +7,12 @@ namespace Remind\ConfluenceChangelog;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Request;
-use function GuzzleHttp\Psr7\stream_for;
 use Remind\ConfluenceChangelog\Model\Content;
 use Remind\ConfluenceChangelog\Model\Content\Body;
 use Remind\ConfluenceChangelog\Model\Content\ContentBody;
 use Symfony\Component\Console\Output\OutputInterface;
+
+use function GuzzleHttp\Psr7\stream_for;
 
 /**
  * ConfluenceClient
@@ -26,32 +27,32 @@ class ConfluenceClient
     /**
      * @var string
      */
-    protected $token = '';
+    protected string $token = '';
 
     /**
      * @var string
      */
-    protected $spaceKey = '';
+    protected string $spaceKey = '';
 
     /**
      * @var string
      */
-    protected $ancestorName = self::ANCESTOR_DEFAULT;
+    protected string $ancestorName = self::ANCESTOR_DEFAULT;
 
     /**
      * @var string
      */
-    protected $ancestorId = '';
+    protected string $ancestorId = '';
 
     /**
      * @var Client|null
      */
-    protected $client = null;
+    protected ?Client $client = null;
 
     /**
      * @var OutputInterface|null
      */
-    protected $output = null;
+    protected ?OutputInterface $output = null;
 
     /**
      * @param string $token
